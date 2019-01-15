@@ -1,20 +1,49 @@
 /* FONTS */
 @font-face {
-  font-family: "Lato Light";
-  src: url("fonts/Lato/Lato-Light.ttf");
+  font-family: 'Lato Light';
+  src: url('fonts/Lato/Lato-Light.ttf');
 }
 @font-face {
-  font-family: "Lato Bold";
-  src: url("fonts/Lato/Lato-Bold.ttf");
+  font-family: 'Lato Italic';
+  src: url('fonts/Lato/Lato-Italic.ttf');
 }
 @font-face {
-  font-family: "Lato";
-  src: url("fonts/Lato/Lato-Regular.ttf");
+  font-family: 'Lato Bold';
+  src: url('fonts/Lato/Lato-Bold.ttf');
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/Lato/Lato-Regular.ttf');
 }
 body {
   margin: 0;
   font-family: 'Oswald';
 }
+
+
+/* nav area */
+/* Style the header */
+.header {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  height: 40px;
+}
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 200;
+  width: 100%
+
+}
+
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
+/* Parallax */
 .parallax-area {
   background-image: linear-gradient(#c6e2ff, #ffce9f);
   position: fixed;
@@ -72,38 +101,46 @@ body {
 
 #about {
   color: #fff;
-  font-family: "Lato Light", Arial, sans-serif;
+  font-family: 'Lato Light', Arial, sans-serif;
   font-weight: 1;
   font-size: 2.3em;
+  padding-top: 50px;
+  padding-bottom: 40px;
 }
 
 #about h2 {
-  font-family: "Lato Black", Arial, sans-serif;
+  font-family: 'Lato Light', Arial, sans-serif;
   font-size: 52px;
+  padding-bottom: 20px;
 }
 
 /* FAQ */
 #faq {
   width: 100%;
-  text-align: center;
   color: white;
-  font-family: 'Questrial', Arial, sans-serif;
+}
+
+#faq h2 {
+  font-family: 'Lato Light', Arial, sans-serif;
+  text-align: center;
+  font-size: 52px;
 }
 .faq-row {
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .question {
-  font-family: 'Questrial', Arial, sans-serif;
+  font-family: 'Lato Light', Arial, sans-serif;
   font-size: 20px;
   cursor: pointer;
   padding-top: 3px;
-  padding-bottom: 5px;
-  color: white;
+  padding-bottom: 10px;
+  color: rgb(184, 194, 238);
 }
 .answer {
-  font-family: 'Questrial', Arial, sans-serif;
-  font-size: 12px;
+  font-family: 'Lato Light', Arial, sans-serif;
+  font-size: 16px;
   color: white;
 }
 
