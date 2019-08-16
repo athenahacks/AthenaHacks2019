@@ -19,82 +19,44 @@
   src: url('fonts/Lato/Lato-Regular.ttf');
 }
 
-body {
-  margin-top: -10px;
-  font-family: 'Oswald';
-  width: 100vw;
-}
-
 /* Title + Parallax Area */
-#top {
-  height: 240vh;
-
-  background-image: linear-gradient(#c6e2ff, #ffce9f);
+#logo {
+  display: flex;
+  flex-direction: column;
+  width: 78vw;
+  /* margin-left: 5vw; */
 }
 
 /* Title + Apply links */
-
-#logo_text {
-  align-self: center;
-  width: 40vw;
-  z-index: 2;
+#logo_title {
+  width: 45vw;
+  margin-top: 2vh;
+  align-self: flex-end;
 }
 
-#logo_subtext {
-  align-self: center;
-  margin-left: 22vw;
+#logo_subtitle {
   width: 15vw;
-}
-#apply_link {
-  align-self: center;
-  margin-left: 21vw;
-  padding-top: 20px;
-  display: flex;
-  width: 15vw;
-  flex-direction: column;
-  z-index: 1000;
-}
-#apply_link a {
-  border-radius: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-color: rgb(107, 117, 163);
-  border-bottom: 0;
-  font-size: 18px;
-  border: 1px solid #000;
-  text-align: center;
-  color: #000;
-  z-index: 22;
-  background: rgba(198, 226, 255, 0.4);
-
-  font-family: 'Questrial', Arial, sans-serif;
-}
-#apply_link a:hover,
-#apply_link a:focus {
-  background: rgba(198, 226, 255, 1);
-  text-decoration: none;
-  z-index: 1000;
+  align-self: flex-end;
+  z-index: 9;
 }
 
-/* Parallax - Desktop View*/
-#parallax-area {
+/* Parallax - Desktop & Mobile View */
+#desktop-landing-parallax-area {
+  width: 100vw;
+  height: 240vh;
+  background-image: linear-gradient(#c6e2ff, #ffce9f);
   position: fixed;
   overflow: hidden;
-  width: 100vw;
-  flex-direction: column;
-  align-content: center;
-  background-position: bottom right;
-  display: none;
+  display: hidden;
+  /* initially hidden on mobile */
 }
 
-#mobile-view {
-  background-image: linear-gradient(#c6e2ff, #ffce9f);
-  position: relative;
+#mobile-landing-area {
   width: 100vw;
   height: 100vh;
-  background-position: center;
-  display: block;
-  background-size: auto 100%;
+  background-image: linear-gradient(#c6e2ff, #ffce9f);
+  position: fixed;
+  overflow: hidden;
 }
 
 .parallax-layer {
@@ -113,45 +75,31 @@ body {
   background-repeat: repeat-x;
 }
 
+/* Switch off/on desktop/mobile view */
 @media (min-width: 992px) {
-  #mobile-view {
+  #mobile-landing-area {
     display: none;
   }
 
-  #parallax-area {
+  #desktop-landing-parallax-area {
     display: flex;
   }
 }
 
 /* san gabriel */
-.layer-5 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  padding-top: 2vh;
-  width: 100vw;
-  z-index: 9;
-}
-/* san gabriel */
 .layer-0 {
   top: 15vh;
-  opacity: 1;
   z-index: 5;
   filter: saturate(40%);
-  width: 100vw;
-  background-position: bottom center;
-  background: url('assets/parallax_layers/mountains.svg') no-repeat top 40px
-    center;
+  background: url('assets/parallax_layers/mountains.svg') no-repeat center;
 }
 
 /* hollywood hills */
 .layer-1 {
-  filter: saturate(40%);
   top: 25vh;
-  opacity: 1;
   width: 110vw;
   z-index: 10;
+  filter: saturate(40%);
   background-repeat: no-repeat;
   background-image: url('assets/parallax_layers/hills.svg');
   background-position: bottom center;
@@ -159,7 +107,7 @@ body {
 
 /* downtown LA */
 .layer-2 {
-  left: 15%;
+  left: 15vw;
   top: 40vh;
   width: 70vw;
   z-index: 15;
@@ -168,9 +116,8 @@ body {
 
 /* USC */
 .layer-3 {
-  right: 0px;
+  right: 0;
   top: 65vh;
-  filter: hue-rotate(-10deg);
   filter: contrast(80%);
   width: 60vw;
   align-self: flex-end;
@@ -194,68 +141,54 @@ body {
 
 /* Main Content area */
 .main {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
   top: 200vh;
   position: absolute;
-
-  left: 0;
   background-color: #47424c;
-  min-height: 1300px;
+  min-height: 110vh;
+  text-align: center;
+  font-size: 2vw;
+  font-family: 'Lato Light', Arial, sans-serif;
+  color: #fff;
 }
 
-.main h1 {
-  color: #fff;
-  font-size: 2em;
-  text-align: center;
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  width: 60vw;
+}
+
+h2 {
+  font-family: 'Lato Light', Arial, sans-serif;
+  font-size: 4vw;
+  margin: 40px;
 }
 
 /* ABOUT */
-
 #about {
-  color: #fff;
-  font-family: 'Lato Light', Arial, sans-serif;
-  font-weight: 1;
-  font-size: 2.3em;
-  padding-top: 50px;
-  padding-bottom: 40px;
-}
-
-#about h2 {
-  font-family: 'Lato Light', Arial, sans-serif;
-  font-size: 52px;
-  padding-bottom: 20px;
+  width: 60vw;
 }
 
 /* FAQ */
 #faq {
-  width: 100%;
-  color: white;
-}
-
-#faq h2 {
-  font-family: 'Lato Light', Arial, sans-serif;
-  text-align: center;
-  font-size: 52px;
-}
-
-.faq-row {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 80vw;
 }
 
 .question {
-  font-family: 'Lato Light', Arial, sans-serif;
-  font-size: 20px;
+  font-size: 2vw;
   cursor: pointer;
-  padding-top: 3px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   color: rgb(184, 194, 238);
 }
 
 .answer {
-  font-family: 'Lato Light', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1vw;
   color: white;
 }
 
@@ -265,7 +198,6 @@ body {
 
 .owl-question {
   width: 260px;
-  height: auto;
   display: block;
   margin: auto;
   opacity: 0.75;
@@ -276,26 +208,12 @@ body {
     display: none;
   }
 }
+
 /* SPONSORS */
 #sponsors {
-  width: 100%;
+  width: 100vw;
   color: black;
-  background-color: #c6e2ff;
-  padding-top: 50px;
-
-  flex-direction: column;
-}
-
-#sponsors h2 {
-  font-family: 'Lato Light', Arial, sans-serif;
-  text-align: center;
-  font-size: 52px;
-  margin-bottom: 40px;
-}
-
-.sponsors-row {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  background-color: #ccc8cf;
 }
 
 .collage-images {
@@ -304,6 +222,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 10px 10px 10px 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 30px;
@@ -425,6 +344,7 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+
   .carousel-inner .carousel-item-right.active,
   .carousel-inner .carousel-item-next {
     transform: translateX(100%);
@@ -443,6 +363,7 @@ body {
   #storiesCarouselSmall {
     display: block;
   }
+
   #storiesCarousel {
     display: none;
   }
