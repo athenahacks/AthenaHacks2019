@@ -42,9 +42,10 @@
 
 /* Parallax - Desktop & Mobile View */
 #desktop-landing-parallax-area {
+  margin-top: -20px;
   width: 100vw;
-  height: 240vh;
-  background-image: linear-gradient(#c6e2ff, #ffce9f);
+  height: 80vh;
+  background-image: linear-gradient(#ffce9f, #140625);
   position: fixed;
   overflow: hidden;
   display: hidden;
